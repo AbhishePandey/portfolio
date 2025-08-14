@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.resume-container {
+    display: flex;
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    width: 30%;
+    background: #e8e8e8;
+    padding: 20px;
+    text-align: center;
+}
+
+.left-section img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.left-section h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.left-section p, .left-section ul {
+    color: #666;
+    font-size: 14px;
+}
+
+.left-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-section ul li {
+    padding: 5px 0;
+}
+
+.right-section {
+    width: 70%;
+    padding: 30px;
+}
+
+.right-section h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+}
+
+.right-section h3 {
+    margin: 5px 0 20px;
+    font-size: 18px;
+    color: #777;
+}
+
+.right-section h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.right-section p {
+    color: #555;
+    font-size: 14px;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.job h3 {
+    margin: 5px 0;
+    color: #444;
+}
+
+.job p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.references p {
+    margin: 5px 0;
+}

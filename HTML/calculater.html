@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4x4 Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .display {
+            background-color: #333;
+            color: white;
+            text-align: right;
+            font-size: 32px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            height: 60px;
+        }
+
+        .button {
+            width: 70px;
+            height: 70px;
+            font-size: 24px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ddd;
+        }
+
+        .button:active {
+            background-color: #bbb;
+        }
+
+        .button-operator {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .button-operator:hover {
+            background-color: #e67e22;
+        }
+
+        .button-clear {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .button-clear:hover {
+            background-color: #c0392b;
+        }
+
+        .button-equal {
+            background-color: #2ecc71;
+            color: white;
+            width: 150px;
+        }
+
+        .button-equal:hover {
+            background-color: #27ae60;
+        }
+
+        .button-zero {
+            width: 150px;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+
+        <!-- First row of buttons -->
+        <div class="button-row">
+            <button class="button button-clear" id="clear">C</button>
+            <button class="button button-operator" id="divide">/</button>
+            <button class="button button-operator" id="multiply">*</button>
+            <button class="button button-operator" id="subtract">-</button>
+        </div>
+
+        <!-- Second row of buttons -->
+        <div class="button-row">
+            <button class="button" id="seven">7</button>
+            <button class="button" id="eight">8</button>
+            <button class="button" id="nine">9</button>
+            <button class="button button-operator" id="add">+</button>
+        </div>
+
+        <!-- Third row of buttons -->
+        <div class="button-row">
+            <button class="button" id="four">4</button>
+            <button class="button" id="five">5</button>
+            <button class="button" id="six">6</button>
+            <button class="button" id="decimal">.</button>
+        </div>
+
+        <!-- Fourth row of buttons -->
+        <div class="button-row">
+            <button class="button" id="one">1</button>
+            <button class="button" id="two">2</button>
+            <button class="button" id="three">3</button>
+            <button class="button button-equal" id="equal">=</button>
+        </div>
+
+        <!-- Fifth row (for zero) -->
+        <div class="button-row">
+            <button class="button button-zero" id="zero">0</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentInput = '0';
+        let operator = '';
+        let firstNumber = '';
+        let secondNumber = '';
+        let result = '';
+
+        const display = document.getElementById('display');
+
+        // Button click events
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonText = this.innerText;
+
+                // Clear button
+                if (buttonText === 'C') {
+                    currentInput = '0';
+                    operator = '';
+                    firstNumber = '';
+                    secondNumber = '';
+                    display.innerText = currentInput;
+                }
+
+                // Number buttons
+                else if (!isNaN(buttonText) || buttonText === '.') {
+                    if (currentInput === '0' && buttonText !== '.') {
+                        currentInput = buttonText;
+                    } else {
+                        currentInput += buttonText;
+                    }
+                    display.innerText = currentInput;
+                }
+
+                // Operator buttons
+                else if (buttonText === '+' || buttonText === '-' || buttonText === '*' || buttonText === '/') {
+                    if (firstNumber === '') {
+                        firstNumber = currentInput;
+                    } else if (secondNumber !== '') {
+                        calculate();
+                        firstNumber = result;
+                    }
+                    operator = buttonText;
+                    currentInput = '';
+                }
+
+                // Equal button
+                else if (buttonText === '=') {
+                    if (firstNumber !== '' && currentInput !== '') {
+                        secondNumber = currentInput;
+                        calculate();
+                        display.innerText = result;
+                        firstNumber = result;
+                        currentInput = '';
+                    }
+                }
+            });
+        });
+
+        // Function to calculate the result
+        function calculate() {
+            firstNumber = parseFloat(firstNumber);
+            secondNumber = parseFloat(secondNumber);
+
+            if (operator === '+') {
+                result = firstNumber + secondNumber;
+            } else if (operator === '-') {
+                result = firstNumber - secondNumber;
+            } else if (operator === '*') {
+                result = firstNumber * secondNumber;
+            } else if (operator === '/') {
+                result = firstNumber / secondNumber;
+            }
+
+            result = result.toString();
+        }
+    </script>
+
+</body>
+</html>

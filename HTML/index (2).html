@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 20px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            color: #333;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .reset-button {
+            background-color: #f44336;
+        }
+
+        .reset-button:hover {
+            background-color: #e53935;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Application Form</h1>
+        <form action="#" method="POST">
+            
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+            <label for="fathers-name">Father's Name</label>
+            <input type="text" id="fathers-name" name="fathers-name" placeholder="Enter your father's name" required>
+
+            <label for="mothers-name">Mother's Name</label>
+            <input type="text" id="mothers-name" name="mothers-name" placeholder="Enter your mother's name" required>
+
+            <label for="university-name">University Name</label>
+            <input type="text" id="university-name" name="university-name" placeholder="Enter your university name" required>
+
+            <label for="university-roll">University Roll Number</label>
+            <input type="text" id="university-roll" name="university-roll" placeholder="Enter your university roll number" required>
+
+            <label for="college-name">College Name</label>
+            <input type="text" id="college-name" name="college-name" placeholder="Enter your college name" required>
+
+            <label for="college-roll">College Roll Number</label>
+            <input type="text" id="college-roll" name="college-roll" placeholder="Enter your college roll number" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="adhar">Aadhaar Number</label>
+            <input type="aadhaar" id="aadhaar" name="aadhaar" placeholder="Enter your aadhaar number" required>
+
+
+            <label for="current-address">Current Address</label>
+            <textarea id="current-address" name="current-address" placeholder="Enter your current address" rows="4" required></textarea>
+
+            <label for="permanent-address">Permanent Address</label>
+            <textarea id="permanent-address" name="permanent-address" placeholder="Enter your permanent address" rows="4" required></textarea>
+
+            <button type="submit">Submit Application</button>
+            <button type="reset" class="reset-button">Reset Form</button>
+        </form>
+
+        <div class="footer">
+            <p>By submitting this form, you agree to our terms and conditions.</p>
+        </div>
+    </div>
+
+</body>
+</html>
