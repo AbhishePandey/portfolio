@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+
+
+ background-image: url('./images/image8.jpg'); /* yaha apna image path lagaye */
+      background-size: cover; /* poore screen me fit ho */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* fixed for stable background */
+      background-size: 100% ;
+      
+      
+
+
+      /* background: #414142;
+      color: #333;
+      min-height: 100vh; */
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #333;
+      color: white;
+      padding: 15px 40px;
+      text-align: right;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: calc(100vh - 60px);
+      padding: 40px 20px;
+    }
+
+    /* Left Side */
+    .left {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      color: white;
+    }
+
+    .left h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #333;
+      font-size: 24px;
+      transition: 0.3s;
+      color: white;
+    }
+
+    .social-links a:hover {
+      color: #007bff;
+    }
+
+    /* Right Side */
+    .right {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+
+    .right img {
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #333;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column-reverse;
+      }
+
+      nav {
+        text-align: center;
+      }
+    }
+
+
+
+    /* About............. */
+
+
+
+    
+    .about-section {
+       background-color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      margin: 50px auto;
+      /* background: #fff; */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .about-section h2 {
+      text-align: center;
+      color: #333;
+    }
+    .about-section p {
+      line-height: 1.6;
+      color: #555;
+    }
+    .skills {
+      margin-top: 20px;
+    }
+    .skills ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .skills li {
+      background: #e0e0e0;
+      display: inline-block;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 20px;
+    }
+    @media(max-width:600px){
+      .about-section {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+
+
+/* Education */
+
+
+.education {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-title {
+  
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #fcfafa; 
+}
+
+.edu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.edu-box {
+   background-color: rgba(255, 255, 255, 0.8);
+  /* background: white; */
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.edu-box:hover {
+  transform: scale(1.05);
+}
+
+.edu-box h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+#showMore {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#showMore:hover {
+  background: #0056b3;
+}
+
+
+
+
+
+/* project */
+
+
+
+.projects-section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 30px;
+       background-color: rgba(255, 255, 255, 0.8);
+      /* background: #fff; */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .projects-section h2 {
+      text-align: center;
+      color: #333;
+    }
+    .project {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+    }
+    .project:last-child {
+      border-bottom: none;
+    }
+    .project h3 {
+      margin: 0;
+      color: #444;
+    }
+    .project p {
+      color: #666;
+      line-height: 1.5;
+    }
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .project a:hover {
+      background: #0056b3;
+    }
+    @media(max-width:600px){
+      .projects-section {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+
+
+    /* skill................................... */
+
+    .skills-section {
+      max-width: 1000px;
+      margin: 50px auto;
+       background-color: rgba(255, 255, 255, 0.8);
+      /* background: #fff; */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .skills-section h2 {
+      text-align: center;
+      color: #333;
+    }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .skill-card {
+      background: #007BFF;
+      color: #fff;
+      padding: 15px 25px;
+      margin: 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+    .skill-card:hover {
+      background: #0056b3;
+    }
+    @media(max-width:600px){
+      .skills-section {
+        margin: 20px;
+        padding: 20px;
+      }
+      .skill-card {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+
+
+    /* cerfification............................. */
+
+
+
+
+    .certification-section {
+      max-width: 1100px;
+      margin: 50px auto;
+       background-color: rgba(255, 255, 255, 0.8);
+      /* background: #fff; */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .certification-section h2 {
+      text-align: center;
+      color: #333;
+    }
+    .certifications-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .certificate-card {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 280px;
+      margin: 15px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .certificate-card:hover {
+      transform: translateY(-5px);
+    }
+    .certificate-card h3 {
+      margin-top: 0;
+      color: #007BFF;
+      font-size: 18px;
+    }
+    .certificate-card p {
+      color: #555;
+      margin: 10px 0;
+    }
+    .certificate-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .certificate-card a:hover {
+      background: #0056b3;
+    }
+    @media(max-width:600px){
+      .certifications-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .certificate-card {
+        width: 90%;
+      }
+    }
+
+
+    /* contect............................. */
+
+
+
+    .contact-section {
+      max-width: 1000px;
+      margin: 50px auto;
+       background-color: rgba(255, 255, 255, 0.8);
+      /* background: #fff; */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .contact-section h2 {
+      text-align: center;
+      color: #333;
+    }
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+    .contact-card {
+      background: #f1f1f1;
+      width: 300px;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    .contact-card h3 {
+      margin-top: 0;
+      color: #007BFF;
+    }
+    .contact-card p, .contact-card a {
+      color: #555;
+      text-decoration: none;
+      margin: 5px 0;
+      display: block;
+    }
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+    @media(max-width:600px){
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-card {
+        width: 90%;
+      }
+    }
+
+
+
+    /* footer...................................... */
+
+
+
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    footer h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+    .social-icons {
+      margin: 20px 0;
+    }
+    .social-icons a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 20px;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: #007BFF;
+    }
+    footer p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #ccc;
+    }
+    @media(max-width:600px){
+      .social-icons a {
+        font-size: 24px;
+        margin: 10px;
+      }
+    }
+
+  </style>
+  <!-- Font Awesome CDN for social media icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="portfolio.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Education.html">Education</a>
+    <a href="project.html">Projects</a>
+    <a href="Skill.html">Skills</a>
+     <a href="Certification.html">Certifications</a>
+    <a href="contect.html">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Left Side -->
+    <div class="left">
+      <h1>Abhishek Pandey</h1>
+      <h3>Role:Full Stack Web Development</h3><br>
+      <p>Email:-pandeyabhishek825109@gmail.com</p>
+      <p>Contact:- +91 8969525636</p><br>
+      <div class="social-links">
+        <a href="https://github.com/AbhishePandey" target="_blank"><i class="fab fa-facebook">Github</i></a>
+        <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-twitter">Linkedin</i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right">
+      <img src="./images/image4.jpg" alt="My Profile Photo" />
+    </div>
+  </div>
+
+  
+
+
+
+
+<section class="about-section">
+    <h2>About Me</h2>
+    <p>Hello! My name is <strong>Abhishek Pandey</strong>. I am a passionate and dedicated <strong>Full Stack Web Developer</strong> with strong knowledge in HTML, CSS, JavaScript, and Java. I love creating simple, responsive, and user-friendly websites. My goal is always to keep learning new technologies and improve my skills to deliver better results.</p>
+
+    
+<!-- 
+    <div class="skills">
+      <h3>Key Skills:</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java Programming</li>
+        <li>Responsive Design</li>
+        <li></li>
+        <li>Teamwork</li>
+      </ul>
+    </div> -->
+  </section>
+
+
+
+
+  <section class="education" id="education">
+    <h2 class="section-title">My Education</h2>
+    <div class="edu-container">
+      <div class="edu-box">
+        <h3>High School</h3>
+        <p>Upgraded High School Tilokari</p>
+        <p>Year: 2016 - 2018</p>
+        <p>Percentage: 81%</p>
+      </div>
+      <div class="edu-box">
+        <h3>Diploma</h3>
+        <p>Government Polytechic Koderma</p>
+        <p>Year: 2020 - 2023</p>
+         <p>Branch: Computer Science & Engineering</p>
+        <p>Percentage: 69%</p>
+      </div>
+      <div class="edu-box">
+        <h3>Bachelor of Technology</h3>
+        <p>MITRC College Alwar Rajasthan</p>
+        <p>Branch: Computer Science & Engineering</p>
+        <p>Year: 2023 - 2026</p>
+        <p></p>
+      </div>
+    </div>
+    <button id="showMore">Show More</button>
+  </section>
+
+<!-- skill...................................... -->
+
+
+
+
+ <section class="skills-section">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">Java Programming</div>
+      <div class="skill-card">C</div>
+      <div class="skill-card">Cpp</div>
+      
+      <div class="skill-card">HTML5</div>
+      <div class="skill-card">CSS3</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">PHP</div>
+      <div class="skill-card">Bootstrap</div>
+      <div class="skill-card">Git & GitHub</div>
+      <div class="skill-card">MySQL</div>
+    </div>
+  </section>
+
+
+<!-- project -->
+
+<section class="projects-section">
+    <h2>My Projects</h2>
+
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>This is my personal portfolio website showcasing my skills, projects, and contact information. Designed with HTML, CSS, and JavaScript for responsive user experience.</p>
+      <a href="portfolio.html" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>Bank Management System</h3>
+      <p>A Java-based desktop application to manage banking operations like account creation, deposit, withdraw, and transaction history with login authentication.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+
+    <div class="project">
+      <h3>Application</h3>
+      <p>A simple and interactive website displaying the periodic table with element details, built using HTML and CSS for academic practice and learning purpose.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+
+
+
+     <div class="project">
+      <h3>Calculater</h3>
+      <p>A simple and interactive website displaying the periodic table with element details, built using HTML and CSS for academic practice and learning purpose.</p>
+      <a href="./HTML/calculater.html" target="_blank">View Project</a>
+    </div>
+
+     <div class="project">
+      <h3>Digitalclock</h3>
+      <p>A simple and interactive website displaying the periodic table with element details, built using HTML and CSS for academic practice and learning purpose.</p>
+      <a href="./HTML/digitalclock.html" target="_blank">View Project</a>
+    </div>
+
+     <div class="project">
+      <h3>Hotal Menu</h3>
+      <p>A simple and interactive website displaying the periodic table with element details, built using HTML and CSS for academic practice and learning purpose.</p>
+      <a href="./HTML/menu.html" target="_blank">View Project</a>
+    </div>
+
+     <div class="project">
+      <h3>Music library</h3>
+      <p>A simple and interactive website displaying the periodic table with element details, built using HTML and CSS for academic practice and learning purpose.</p>
+      <a href="./HTML/music.html" target="_blank">View Project</a>
+    </div>
+
+
+     <div class="project">
+      <h3>Email and Password validation</h3>
+      <p>A simple and interactive website displaying the periodic table with element details, built using HTML and CSS for academic practice and learning purpose.</p>
+      <a href="./HTML/email and password validation.html" target="_blank">View Project</a>
+    </div>
+    
+
+
+  </section>
+
+
+
+  <!-- certification-section .........................-->
+
+
+  <section class="certification-section">
+    <h2>My Certifications</h2>
+    <div class="certifications-container">
+      
+      <div class="certificate-card">
+        <h3>Advanced Java Programming</h3>
+        <p>Platform: MITRC (Skill Oceans)</p>
+        <a href="javacerti.html" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="certificate-card">
+        <h3>Web Development</h3>
+        <p>Platform: Shineskill Software Pvt.Ltd</p>
+        <a href="webcerti.html" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="certificate-card">
+        <h3>Introduction to Cloud Computing</h3>
+        <p>Platform: Simplilearn SkillUP </p>
+        <a href="cloudcert.html" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="certificate-card">
+        <h3>Web Development with Elm</h3>
+        <p>Platform: Infosys Springboard</p>
+        <a href="webElmcert.html" target="_blank">View Certificate</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- contect........................ -->
+
+
+  <section class="contact-section">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      
+      <!-- Offline Contact Card -->
+      <div class="contact-card">
+        <h3>Offline Contact</h3>
+        <p><strong>Address:</strong></p>
+        <p>Tilokari<br>P.O. Sarmatand,Thana Jainagar, Koderma, jharkhand</p>
+        <p><strong>Phone:</strong></p>
+        <p>+91 8969525636</p>
+      </div>
+
+      <!-- Online Contact Card -->
+      <div class="contact-card">
+        <h3>Online Contact</h3>
+        <p><strong>Email:</strong></p>
+        <a href="mailto:yourname@gmail.com">pandeyabhishek825109@gmail.com</a>
+        <p><strong>LinkedIn:</strong></p>
+        <a href="https://www.linkedin.com/in/abhishek-pandey-73a3272b9/" target="_blank">linkedin.com/in/yourprofile</a>
+        <p><strong>GitHub:</strong></p>
+        <a href="https://github.com/AbhishePandey" target="_blank">github.com/yourusername</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- footer................................................. -->
+
+
+
+   <footer>
+    <h3>Abhishek Pandey</h3>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:yourname@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+919876543210"><i class="fas fa-phone"></i></a>
+    </div>
+    <p>&copy; 2025 Abhishek Pandey. All rights reserved.</p>
+  </footer>
+
+
+
+  <!-- Optional JS (currently none needed) -->
+</body>
+</html>
